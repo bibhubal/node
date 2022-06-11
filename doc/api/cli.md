@@ -349,7 +349,7 @@ Use this flag to disable top-level await in REPL.
 ### `--experimental-shadow-realm`
 
 <!-- YAML
-added: REPLACEME
+added: v18.4.0
 -->
 
 Use this flag to enable [ShadowRealm][] support.
@@ -782,7 +782,7 @@ against FIPS-enabled OpenSSL.
 ### `--openssl-shared-config`
 
 <!-- YAML
-added: REPLACEME
+added: v18.4.0
 -->
 
 Enable OpenSSL default configuration section, `openssl_conf` to be read from

@@ -8,6 +8,7 @@
 </tr>
 <tr>
 <td>
+<a href="#18.4.0">18.4.0</a><br/>
 <a href="#18.3.0">18.3.0</a><br/>
 <a href="#18.2.0">18.2.0</a><br/>
 <a href="#18.1.0">18.1.0</a><br/>
@@ -35,6 +36,98 @@
   * [0.10.x](CHANGELOG_V010.md)
   * [io.js](CHANGELOG_IOJS.md)
   * [Archive](CHANGELOG_ARCHIVE.md)
+
+<a id="18.4.0"></a>
+
+## 2022-06-14, Version 18.4.0 (Current), @danielleadams
+
+### Notable Changes
+
+* **crypto**:
+  * remove Node.js-specific webcrypto extensions (Filip Skokan) [#43310](https://github.com/nodejs/node/pull/43310)
+  * add CFRG curves to Web Crypto API (Filip Skokan) [#42507](https://github.com/nodejs/node/pull/42507)
+* **report**:
+  * add more heap infos in process report (theanarkh) [#43116](https://github.com/nodejs/node/pull/43116)
+* **src**:
+  * add --openssl-shared-config option (Daniel Bevenius) [#43124](https://github.com/nodejs/node/pull/43124)
+  * add OpenSSL config appname (Daniel Bevenius) [#43124](https://github.com/nodejs/node/pull/43124)
+  * add initial shadow realm support (Chengzhong Wu) [#42869](https://github.com/nodejs/node/pull/42869)
+
+### Commits
+
+* \[[`0aac9658d4`](https://github.com/nodejs/node/commit/0aac9658d4)] - **async\_hooks**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`7d54a4ec8b`](https://github.com/nodejs/node/commit/7d54a4ec8b)] - **build**: add nonpm and nocorepack to vcbuild.bat (Darshan Sen) [#43219](https://github.com/nodejs/node/pull/43219)
+* \[[`c51e5a30e4`](https://github.com/nodejs/node/commit/c51e5a30e4)] - **child\_process**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`a8cbe973e1`](https://github.com/nodejs/node/commit/a8cbe973e1)] - **cluster**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`85fa514536`](https://github.com/nodejs/node/commit/85fa514536)] - **crypto**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`37d1be59f2`](https://github.com/nodejs/node/commit/37d1be59f2)] - **(SEMVER-MINOR)** **crypto**: remove Node.js-specific webcrypto extensions (Filip Skokan) [#43310](https://github.com/nodejs/node/pull/43310)
+* \[[`591461feb8`](https://github.com/nodejs/node/commit/591461feb8)] - **(SEMVER-MINOR)** **crypto**: add CFRG curves to Web Crypto API (Filip Skokan) [#42507](https://github.com/nodejs/node/pull/42507)
+* \[[`aa163f12fd`](https://github.com/nodejs/node/commit/aa163f12fd)] - **doc**: fix typo in globals.md (Daeyeon Jeong) [#43365](https://github.com/nodejs/node/pull/43365)
+* \[[`f7ea71bd0a`](https://github.com/nodejs/node/commit/f7ea71bd0a)] - **doc**: use serial comma in webstreams docs (Tobias Nießen) [#43353](https://github.com/nodejs/node/pull/43353)
+* \[[`03fc9918da`](https://github.com/nodejs/node/commit/03fc9918da)] - **doc**: fix specifier example in `esm.md` (hiroki osame) [#43351](https://github.com/nodejs/node/pull/43351)
+* \[[`bc57aa2089`](https://github.com/nodejs/node/commit/bc57aa2089)] - **doc**: add undici to glossary (F3n67u) [#43327](https://github.com/nodejs/node/pull/43327)
+* \[[`c55f3e91e5`](https://github.com/nodejs/node/commit/c55f3e91e5)] - **doc**: change glossary link in pull request guide to node's glossary doc (Feng Yu) [#43318](https://github.com/nodejs/node/pull/43318)
+* \[[`752b5ecad0`](https://github.com/nodejs/node/commit/752b5ecad0)] - **doc**: fix typo in util.parseArgs usage example (Michael Ficarra) [#43332](https://github.com/nodejs/node/pull/43332)
+* \[[`d9e93adf49`](https://github.com/nodejs/node/commit/d9e93adf49)] - **doc**: improve description of TZ (Tobias Nießen) [#43334](https://github.com/nodejs/node/pull/43334)
+* \[[`f323198e52`](https://github.com/nodejs/node/commit/f323198e52)] - **doc**: use serial comma in net docs (Tobias Nießen) [#43335](https://github.com/nodejs/node/pull/43335)
+* \[[`35814001e5`](https://github.com/nodejs/node/commit/35814001e5)] - **doc**: make clear the result of comparison between Symbol.for (Kohei Ueno) [#43309](https://github.com/nodejs/node/pull/43309)
+* \[[`d9f428e4dd`](https://github.com/nodejs/node/commit/d9f428e4dd)] - **doc**: add missing require to stream api doc (Feng Yu) [#43237](https://github.com/nodejs/node/pull/43237)
+* \[[`aae63df637`](https://github.com/nodejs/node/commit/aae63df637)] - **doc**: add CIGTM to `glossary.md` (Feng Yu) [#43316](https://github.com/nodejs/node/pull/43316)
+* \[[`e3798c582c`](https://github.com/nodejs/node/commit/e3798c582c)] - **doc**: use serial comma in pull request doc (Feng Yu) [#43319](https://github.com/nodejs/node/pull/43319)
+* \[[`ccc88e5ca4`](https://github.com/nodejs/node/commit/ccc88e5ca4)] - **doc**: use serial comma in ESM docs (Tobias Nießen) [#43322](https://github.com/nodejs/node/pull/43322)
+* \[[`869d7a9422`](https://github.com/nodejs/node/commit/869d7a9422)] - **doc**: promote cdt to tier 3 (Tony Gorez) [#43290](https://github.com/nodejs/node/pull/43290)
+* \[[`670e8da077`](https://github.com/nodejs/node/commit/670e8da077)] - **doc**: fix chromium document link in pull-requests.md (rikapo) [#43265](https://github.com/nodejs/node/pull/43265)
+* \[[`f657a7e1e0`](https://github.com/nodejs/node/commit/f657a7e1e0)] - **doc**: fix 404 link of BUILDING.md (Feng Yu) [#43234](https://github.com/nodejs/node/pull/43234)
+* \[[`4d682bf1e1`](https://github.com/nodejs/node/commit/4d682bf1e1)] - **doc**: update CHANGELOG\_V18.md (Filip Skokan) [#43298](https://github.com/nodejs/node/pull/43298)
+* \[[`5119a275d9`](https://github.com/nodejs/node/commit/5119a275d9)] - **doc**: add src/crypto to CC list for nodejs/crypto (Tobias Nießen) [#43286](https://github.com/nodejs/node/pull/43286)
+* \[[`beee82a094`](https://github.com/nodejs/node/commit/beee82a094)] - **doc**: use serial comma in console docs (Tobias Nießen) [#43257](https://github.com/nodejs/node/pull/43257)
+* \[[`601d93386a`](https://github.com/nodejs/node/commit/601d93386a)] - **esm**: fix chain advances when loader calls next\<HookName> multiple times (Jacob Smith) [#43303](https://github.com/nodejs/node/pull/43303)
+* \[[`86bafe5057`](https://github.com/nodejs/node/commit/86bafe5057)] - **esm**: refactor responseURL handling (Guy Bedford) [#43164](https://github.com/nodejs/node/pull/43164)
+* \[[`b09593cb87`](https://github.com/nodejs/node/commit/b09593cb87)] - **esm**: fix http(s) import via custom loader (Jacob Smith) [#43130](https://github.com/nodejs/node/pull/43130)
+* \[[`7d45e5ffba`](https://github.com/nodejs/node/commit/7d45e5ffba)] - **(SEMVER-MINOR)** **esm**: add chaining to loaders (Jacob Smith) [#42623](https://github.com/nodejs/node/pull/42623)
+* \[[`2104dc6abe`](https://github.com/nodejs/node/commit/2104dc6abe)] - **events**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`e88b7c8114`](https://github.com/nodejs/node/commit/e88b7c8114)] - **fs**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`12429d3930`](https://github.com/nodejs/node/commit/12429d3930)] - **fs**: export constants from `fs/promises` (Feng Yu) [#43177](https://github.com/nodejs/node/pull/43177)
+* \[[`7dcb7ccf84`](https://github.com/nodejs/node/commit/7dcb7ccf84)] - **http**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`2474ffb75c`](https://github.com/nodejs/node/commit/2474ffb75c)] - **http2**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`7f4490e293`](https://github.com/nodejs/node/commit/7f4490e293)] - **https**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`1deef4d12b`](https://github.com/nodejs/node/commit/1deef4d12b)] - **lib**: use `kEmptyObject` in various places (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`f0fbb76155`](https://github.com/nodejs/node/commit/f0fbb76155)] - **lib**: give names to promisified methods (LiviaMedeiros) [#43218](https://github.com/nodejs/node/pull/43218)
+* \[[`0e00e8997b`](https://github.com/nodejs/node/commit/0e00e8997b)] - **lib**: use null-prototype objects for property descriptors (Antoine du Hamel) [#43270](https://github.com/nodejs/node/pull/43270)
+* \[[`2ff8f07052`](https://github.com/nodejs/node/commit/2ff8f07052)] - **meta**: move one or more collaborators to emeritus (#43183) (Node.js GitHub Bot) [#43183](https://github.com/nodejs/node/pull/43183)
+* \[[`c3652ba6ee`](https://github.com/nodejs/node/commit/c3652ba6ee)] - **meta**: update AUTHORS (Node.js GitHub Bot) [#43312](https://github.com/nodejs/node/pull/43312)
+* \[[`5661a4d214`](https://github.com/nodejs/node/commit/5661a4d214)] - **net,dns**: move hasObserver out of perf function (theanarkh) [#43217](https://github.com/nodejs/node/pull/43217)
+* \[[`4a95ac7a90`](https://github.com/nodejs/node/commit/4a95ac7a90)] - **perf\_hooks**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`9127774ab3`](https://github.com/nodejs/node/commit/9127774ab3)] - **readline**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`55d01b31ec`](https://github.com/nodejs/node/commit/55d01b31ec)] - **(SEMVER-MINOR)** **report**: add more heap infos in process report (theanarkh) [#43116](https://github.com/nodejs/node/pull/43116)
+* \[[`ad771837db`](https://github.com/nodejs/node/commit/ad771837db)] - **src**: convey potential exceptions during StreamPipe construction (Darshan Sen) [#43240](https://github.com/nodejs/node/pull/43240)
+* \[[`f37265ab45`](https://github.com/nodejs/node/commit/f37265ab45)] - **(SEMVER-MINOR)** **src**: add initial shadow realm support (Chengzhong Wu) [#42869](https://github.com/nodejs/node/pull/42869)
+* \[[`f7ce90bd90`](https://github.com/nodejs/node/commit/f7ce90bd90)] - **(SEMVER-MAJOR)** **src,deps,build,test**: add OpenSSL config appname (Daniel Bevenius) [#43124](https://github.com/nodejs/node/pull/43124)
+* \[[`b2fce3f3b6`](https://github.com/nodejs/node/commit/b2fce3f3b6)] - **(SEMVER-MAJOR)** **src,doc,test**: add --openssl-shared-config option (Daniel Bevenius) [#43124](https://github.com/nodejs/node/pull/43124)
+* \[[`f1833c9eb2`](https://github.com/nodejs/node/commit/f1833c9eb2)] - **stream**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`e216490711`](https://github.com/nodejs/node/commit/e216490711)] - **test**: convert then to async/await (Meek Simbule) [#43292](https://github.com/nodejs/node/pull/43292)
+* \[[`bf4ac97a44`](https://github.com/nodejs/node/commit/bf4ac97a44)] - **test**: add `BigInt`s to `common.getArrayBufferViews()` (LiviaMedeiros) [#43235](https://github.com/nodejs/node/pull/43235)
+* \[[`679fa6347b`](https://github.com/nodejs/node/commit/679fa6347b)] - **test\_runner**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`0024edc007`](https://github.com/nodejs/node/commit/0024edc007)] - **timers**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`8b66e72df1`](https://github.com/nodejs/node/commit/8b66e72df1)] - **tls**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`0d6fdd24b8`](https://github.com/nodejs/node/commit/0d6fdd24b8)] - **tls**: fix performance regression in `convertALPNProtocols()` (LiviaMedeiros) [#43250](https://github.com/nodejs/node/pull/43250)
+* \[[`56e56e84f1`](https://github.com/nodejs/node/commit/56e56e84f1)] - **tools**: fix `create-or-update-pull-request-action` hash on GHA (Antoine du Hamel) [#43378](https://github.com/nodejs/node/pull/43378)
+* \[[`3d4063f902`](https://github.com/nodejs/node/commit/3d4063f902)] - **tools**: add `avoid-prototype-pollution` lint rule (Antoine du Hamel) [#43308](https://github.com/nodejs/node/pull/43308)
+* \[[`495aaa9270`](https://github.com/nodejs/node/commit/495aaa9270)] - **tools**: fix find-inactive actions (LiviaMedeiros) [#43377](https://github.com/nodejs/node/pull/43377)
+* \[[`5aee0e679f`](https://github.com/nodejs/node/commit/5aee0e679f)] - **tools**: update lint-md-dependencies to rollup\@2.75.5 (Node.js GitHub Bot) [#43313](https://github.com/nodejs/node/pull/43313)
+* \[[`f6119264b0`](https://github.com/nodejs/node/commit/f6119264b0)] - **tools**: update eslint to 8.17.0 (Node.js GitHub Bot) [#43314](https://github.com/nodejs/node/pull/43314)
+* \[[`5a25fdb25b`](https://github.com/nodejs/node/commit/5a25fdb25b)] - **tools**: use hashes instead of tags for external actions (#43284) (Antoine du Hamel) [#43284](https://github.com/nodejs/node/pull/43284)
+* \[[`abc817939f`](https://github.com/nodejs/node/commit/abc817939f)] - **tools**: update `codecov/codecov-action` version (Antoine du Hamel) [#43297](https://github.com/nodejs/node/pull/43297)
+* \[[`2c2966ed76`](https://github.com/nodejs/node/commit/2c2966ed76)] - **tools**: update lint-md-dependencies to rollup\@2.75.3 (Node.js GitHub Bot) [#43261](https://github.com/nodejs/node/pull/43261)
+* \[[`7871af06cb`](https://github.com/nodejs/node/commit/7871af06cb)] - **tools**: update clang-format 1.7.0 to 1.8.0 (Darshan Sen) [#43241](https://github.com/nodejs/node/pull/43241)
+* \[[`47fd3c1978`](https://github.com/nodejs/node/commit/47fd3c1978)] - _**Revert**_ "**tools**: refactor `tools/license2rtf` to ESM" (Richard Lau) [#43214](https://github.com/nodejs/node/pull/43214)
+* \[[`2b0d8de261`](https://github.com/nodejs/node/commit/2b0d8de261)] - **tools**: refactor `tools/license2rtf` to ESM (Feng Yu) [#43101](https://github.com/nodejs/node/pull/43101)
+* \[[`8fc42d31a5`](https://github.com/nodejs/node/commit/8fc42d31a5)] - **url**: revert "validate ipv4 part length" (Antoine du Hamel) [#42940](https://github.com/nodejs/node/pull/42940)
+* \[[`939a812c0d`](https://github.com/nodejs/node/commit/939a812c0d)] - **url**: validate ipv4 part length (Yagiz Nizipli) [#42915](https://github.com/nodejs/node/pull/42915)
+* \[[`16ebaa017b`](https://github.com/nodejs/node/commit/16ebaa017b)] - **util**: add `kEmptyObject` to internal/util (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`dd9bf8bd7f`](https://github.com/nodejs/node/commit/dd9bf8bd7f)] - **vm**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`2ae88a73d4`](https://github.com/nodejs/node/commit/2ae88a73d4)] - **wasi**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
+* \[[`63895eed6b`](https://github.com/nodejs/node/commit/63895eed6b)] - **worker**: use `kEmptyObject` (LiviaMedeiros) [#43159](https://github.com/nodejs/node/pull/43159)
 
 <a id="18.3.0"></a>
 
